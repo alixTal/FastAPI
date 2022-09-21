@@ -32,7 +32,8 @@ async def demo_get_path_id(path_id: int):
 
 start = time.time()
 while True:
-  end = time.time()
-  time_string = str(datetime.timedelta(seconds=end - start))
-#   print("\r"+time_string, end="")
-  print(time_string, end =" ")
+    time.sleep(1)
+    end = time.time()
+    time_string = str(datetime.timedelta(seconds=end - start))
+      print("\r"+time_string, end="")
+    # print(time_string, end =" ")
