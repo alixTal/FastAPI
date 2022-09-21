@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import time
+import datetime
+
 
 app = FastAPI()
 
@@ -27,6 +29,10 @@ async def demo_post(inp: Msg):
 async def demo_get_path_id(path_id: int):
     return {"message": f"This is /path/{path_id} endpoint, use post request to retrieve result"}
 
+
+start = time.time()
 while True:
-    time.sleep(1)
-    print("haloo")
+  end = time.time()
+  time_string = str(datetime.timedelta(seconds=end - start))
+#   print("\r"+time_string, end="")
+  print(time_string, end =" ")
